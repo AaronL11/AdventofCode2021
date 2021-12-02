@@ -1,0 +1,7 @@
+/target
+/tests
+/src/files
+*.lock
+*.toml
+*.py
+*.sh
