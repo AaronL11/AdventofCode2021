@@ -3,11 +3,11 @@ use std::io::{stdin, stdout, BufWriter, Read, Stdout, Write};
 
 #[allow(non_snake_case)]
 fn solve<R: Read>(mut scan: Scanner<R>, mut out: BufWriter<Stdout>) -> Result<(), StopCode> {
-    let words = scan.words::<u16>().collect::<Vec<_>>();
     writeln!(
         out,
         "{}",
-        words
+        scan.words::<u16>()
+            .collect::<Vec<_>>()
             .windows(3)
             .fold((-1, 0), |(count, prev), w| {
                 let sum = w.into_iter().sum();
